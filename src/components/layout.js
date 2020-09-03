@@ -107,13 +107,13 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-    //  setLoaded(true)
+      //  setLoaded(true)
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
 
-    },3500);//3500
+    }, 3500);//3500
     return () => clearTimeout(timer);
   }, []);
 
@@ -123,8 +123,8 @@ const Layout = ({ children }) => {
     gsap.registerPlugin(ScrollTrigger)
     allSection.forEach(element => {
       if (element.className !== 'intro') {
-        element.style.visibility='hidden';
-      //  element.style.transform="translateY(300px)"
+        element.style.visibility = 'hidden';
+        //  element.style.transform="translateY(300px)"
         element.style.filter = 'blur(50px)';
       }
       gsap.to(element, {
@@ -141,7 +141,7 @@ const Layout = ({ children }) => {
       console.log(element)
     });
 
-  },[loaded])
+  }, [loaded])
   return (
     <>
       <div className='container' style={{ position: 'relative', minHeight: '100vh', margin: '10px;' }}>
@@ -149,42 +149,6 @@ const Layout = ({ children }) => {
           transition: '0.3s cubic-bezier(0.7, 0.1, 0.4, 0.8) 0s',
         }} center />}
         <GlobalStyle overflow={overflow} scrollbarSize={!loaded ? 0 : 10} />
-        {loaded && (
-          <>
-            <Header overflow={overflow} setOverflow={setOverflow} siteTitle={data.site.siteMetadata.title} />
-            <main css={`
-                margin:  120px auto ;
-                max-width: 960px;
-                padding:  0 1.0875rem 1.45rem ;
-                @media only screen and (max-width : 768px) {
-                 margin:100px auto;
-                }
-              `}>
-              <section className="intro">
-                <IntroText><h4>Hello there! I'm</h4>
-                  <h1>Andrei Ayar.</h1>
-                  <h2>And my ambition driven goal is to build to help others.</h2>
-                  <p>Follow me trough this journey, to find out more, below.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-                    book.</p>
-                    <button>Contact Me</button>
-                </IntroText>
-              </section>
-              <section>
-                <ProjectsOverview setActiveButton={setActiveButton} activeButton={activeButton} />
-              </section>
-              <section>
-                <IndepthProject id={activeButton} />
-                <IndepthProject id={activeButton} />
-                <IndepthProject id={activeButton} />
-              </section>
-              {children}</main>
-            <footer style={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)' }}>
-              © {new Date().getFullYear()}, Built with
-          {` `}
-              <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </footer>
-          </>
-        )}
       </div>
     </>
   )
