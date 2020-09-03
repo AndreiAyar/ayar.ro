@@ -16,7 +16,7 @@ const InnerText = styled.div`
       width: 0px;
     }
     to {
-      width: 150px
+      width: 130px;
     }
   }
   @keyframes undo {
@@ -33,17 +33,18 @@ const InnerText = styled.div`
       border-color: transparent;
     }
     50% {
-      border-right: 0.15em solid white;
+      border-right: 2px solid white;
     }
     100% {
-      border-right: 0.15em solid white;
+      border-right: 2px solid white;
     }
   }
 
   h1,
   h2 {
     color: white;
-    height:30px;
+
+    height: 30px;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
@@ -63,6 +64,7 @@ const InnerText = styled.div`
     ${props =>
       props.visible == "visible"
         ? css`
+            border-right: 2px solid white;
             animation: first-typing 1.7s steps(50, end),
               undo 1.7s 3s steps(50, end) forwards,
               blink-caret 0.75s step-end infinite;
@@ -74,12 +76,17 @@ const InnerText = styled.div`
 
   h2.second-type {
     width: 0px;
+    ${props =>
+      props.visible == "hidden" &&
+      css`
+        border-right: 2px solid white;
+      `}
+
     animation: second-typing 1.1s 5s steps(50, end) forwards,
       blink-caret 0.75s 5s step-end infinite;
   }
 `
 const LogoImg = styled.div`
- 
   ${props =>
     props.center &&
     css`
@@ -95,7 +102,6 @@ const LogoImg = styled.div`
       filter: blur(50px);
       /*   animation: fadeIn 1s ease forwards 0s  , fadeOut 3s ease forwards 2.3s  ;*/
       animation: fadeIn 2s ease forwards 0s;
-         
 
       @keyframes fadeOut {
         to {
