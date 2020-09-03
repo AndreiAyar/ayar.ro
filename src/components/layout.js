@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Footer from './Footer'
 import "./layout.css"
 
 import Logo from './logo'
@@ -144,12 +145,17 @@ const Layout = ({ children }) => {
   }, [loaded])
   return (
     <>
-      <div className='container' style={{ position: 'relative', minHeight: '100vh', margin: '10px;' }}>
-        {!loaded && <Logo style={{
+      <div className='container' style={{   minHeight: '100vh',  }}>
+        {!loaded && <><Logo style={{
           transition: '0.3s cubic-bezier(0.7, 0.1, 0.4, 0.8) 0s',
-        }} center />}
+        }} center />
+        
+        </>
+        }
         <GlobalStyle overflow={overflow} scrollbarSize={!loaded ? 0 : 10} />
+        
       </div>
+      <Footer/>
     </>
   )
 }
