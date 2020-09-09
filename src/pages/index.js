@@ -19,7 +19,7 @@ const Button = styled.div`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Ayar.ro" />
 
   </Layout>
 )

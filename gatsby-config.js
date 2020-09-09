@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Ayar.ro | Wev Developer`,
+    title: `Wev Developer`,
     description: `Driven by the ambition to build to help others.`,
     author: `@andreiayar`,
   },
