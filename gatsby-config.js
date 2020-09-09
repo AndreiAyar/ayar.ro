@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Ayar.ro | Develop`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Ayar.ro | Wev Developer`,
+    description: `Driven by the ambition to build to help others.`,
+    author: `@andreiayar`,
   },
   plugins: [
     `gatsby-plugin-sharp`,
