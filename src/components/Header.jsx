@@ -3,6 +3,9 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import Logo from "./Logo"
+ 
+
+
 const MainHeader = styled.div`
   width: 100%;
   height: 70px;
