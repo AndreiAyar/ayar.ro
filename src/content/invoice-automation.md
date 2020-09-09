@@ -1,14 +1,13 @@
 ---
-id: 1
-title: "Invoice Automation"
-short_title: "Automation"
+id: 2
+title: "Integrated Automation"
+short_title: "Integrated Automation"
 date: "2019-12-12"
-image: "../images/gatsby-icon.png"
+image: "../images/automation.png"
 description_list: 
-- "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500."
-- "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration isn some form, by injected humour, or randomised words which don't look even slightly believable."
-- "It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable."
- 
+- "Development of integrated automation to replace human labour, extended on multiple cases of supplier invoices."
+- "Cross-platform desktop application with real time feed of the activity done by the automation tool, on multiple devices, simultaneously, using sockets."
+tags: "ElectronJS, RobotJS, ReactJS, Sqllite, ExpressJS"
 
 ---
 

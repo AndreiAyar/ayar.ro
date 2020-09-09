@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import styled, { css } from "styled-components"
 import CategoryTitle from "./CategoryTitle"
 import { graphql, useStaticQuery } from "gatsby"
-
+import Next from "../images/next.svg"
 const Projects = styled.div`
   width: 100%;
 `
@@ -39,6 +39,11 @@ const ProjectsList = styled.div`
     span {
       display: inline-block;
       text-align: left;
+    }
+    @media only screen and (min-width: 768px) {
+      span {
+        width: 100px;
+      }
     }
   }
   & .${`activeSlider`} {
@@ -130,7 +135,9 @@ const ProjectDetails = styled.div`
 
   @media only screen and (min-width: 768px) {
     div {
-      margin-left: -150px;
+      width:300px;
+      margin:0 auto;
+       
     }
   }
   @keyframes arrow-up-down {
@@ -163,7 +170,7 @@ const ProjectDetails = styled.div`
 const IndividualProject = ({ activeButton, buttonHandler }) => {
   const data = useStaticQuery(graphql`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: [frontmatter___id], order: ASC }) {
         edges {
           node {
             frontmatter {
@@ -182,7 +189,7 @@ const IndividualProject = ({ activeButton, buttonHandler }) => {
 
   return (
     <>
-      <ProjectsList activeButton={activeButton}>
+      <ProjectsList  activeButton={activeButton}>
         <span className="activeSlider"></span>
         <ul className="list_with_button">
           {data.allMarkdownRemark.edges.map(({ node }, index) => (
@@ -210,12 +217,22 @@ const IndividualProject = ({ activeButton, buttonHandler }) => {
               <li key={index}>{description}</li>
             ))}
           </ul>
-          <a href="#">
-          <div css={`cursor:pointer;`}>
-            {" "}
-            <h4>Details </h4>
-            <img src="/static/next.svg" />{" "}
-          </div>
+          <a
+            href={activeButton == 0 ? '#project__1' : activeButton == 1 ? '#project__2' : activeButton == 2 ? "#project__3" : activeButton == 3 && "#project__4"}
+            css={`
+              text-decoration: none;
+             
+            `}
+          >
+            <div
+              css={`
+                cursor: pointer;
+              `}
+            >
+              {" "}
+              <h4>In App Demonstration </h4>
+              <img src={Next} />{" "}
+            </div>
           </a>
         </ProjectDetails>
       </ProjectsList>

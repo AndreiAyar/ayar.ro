@@ -1,14 +1,13 @@
 ---
 id: 3
 title: "Real estate promotion"
-short_title: "Advert"
+short_title: "Real Estate"
 date: "2019-12-12"
-image: "../images/image.png"
+image: "../images/browser_mobile.png"
 description_list: 
-- "Praesent interdum, enim a issaculis hendrerit, arcu ante sollicitudin neque, at vulputate ligula leo at tortor."
-- "Fusce erat erat, cursus eu libero non, sollicitudin vehicula urna. Integer imperdiet risus ornare tellus accumsan suscipit."
-- "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-
+- "Easily publish real estate and get messaged by various buyers, within the platform.
+Multi upload photo support. Written with GraphQL and React JS with Carousel of pictures that the advertiser uploaded and Sqllite3 database with Knex ORM."
+tags: "GraphQL, Apollo, ExpressJS, Sqllite"
 
 ---
 

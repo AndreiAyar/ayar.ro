@@ -1,13 +1,19 @@
 ---
-id: 2
-title: "Skin Care RN App"
+id: 1
+title: "iOS & Android App for skin care"
 short_title: "Mobile App"
 date: "2019-12-12"
-image: "../images/image.png"
+image: "../images/iphone_11.png"
 description_list: 
-- "Nullam lobortis, orci ac ullamcorper aliquam, lectus felis maximus ex, sed finibus ex enim vel nisi."
-- "Donec tincidunt turpis iaculis placerat blandit. Suspendisse mi arcu, rutrum sed ornare at, vestibulum a metus."
-- " Vestibulum ante ipssum primis in faucibus orci luctus et ultricess posuere cubilia curae; Nullam quis urna luctus velit finibus suscipit id et massa. Donec vel ornare elit."
+- "Ever got frustrated that you forgot what lotion for your skin to use ? And at what hour ? And in which order from the multitude of types and brands ?  " 
+
+- "Never was so easier with React Native Based App with build in notification system based on the user prefferences, that redirects after press to the designated routine, containing all the needed products."
+
+- " Ability to change from one routine or multiple ones at the same time."
+
+- "Built in blog posts system with tags for easier recognition of the content."
+
+tags: "GraphQL, Apollo, React Native, MongoDB, Mongoosejs ODM, Styled Components"
 
 ---
 

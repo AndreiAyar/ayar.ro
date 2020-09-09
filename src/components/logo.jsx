@@ -1,7 +1,7 @@
 import React from "react"
 
 import styled, { css } from "styled-components"
-
+import logo from "../images/logo.png"
 const LogoImg = styled.div`
   ${props =>
     props.center &&
@@ -18,9 +18,7 @@ const LogoImg = styled.div`
       -ms-filter: blur(50px);
       filter: blur(50px);
       /*   animation: fadeIn 1s ease forwards 0s  , fadeOut 3s ease forwards 2.3s  ;*/
-      animation: fadeIn 1s ease forwards 0s,
-        fadeOut 2s ease forwards 1s infinite,
-        fadeIn 2s ease forwards 1s infinite;
+      animation: fadeIn 1s ease forwards 0s;
       @keyframes fadeOut {
         to {
           -webkit-filter: blur(50px);
@@ -98,7 +96,7 @@ const Logo = props => {
   return (
     <LogoImg {...props}>
       <div>
-        <img src="static/logo.png" alt="Ayar.ro" />
+        <img src={logo} alt="Ayar.ro" />
       </div>
     </LogoImg>
   )

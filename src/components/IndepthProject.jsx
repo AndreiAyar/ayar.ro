@@ -1,9 +1,9 @@
 import React, { useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+
 import CategoryTitle from "./CategoryTitle"
 import { css } from "styled-components"
-
+import ProjectDetails from './ProjectDetails'
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -18,14 +18,16 @@ import { css } from "styled-components"
 const IndepthProject = ({ id }) => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: [frontmatter___id], order: ASC }) {
         edges {
           node {
             frontmatter {
+              id
               title
               short_title
               date
               description_list
+              tags
               image {
                 childImageSharp {
                   fluid(maxWidth: 700) {
@@ -39,50 +41,16 @@ const IndepthProject = ({ id }) => {
       }
     }
   `)
-  const items = []
-  for (let i = 0; i <= 100; i++) {
-    items.push(<p>Sulea {Math.floor(Math.random(0, 1))}</p>)
-  }
+ 
+  // data.allMarkdownRemark.edges.map(x=>console.log(x))
+  //console.log(data.allMarkdownRemark.edges)
 
   return (
     <>
       <CategoryTitle catNo={"02."} title={"Projects Details"} />
-      <div
-        css={`
-          display: flex;
-          align-items: flex-start;
-          height: auto;
-        `}
-      >
-        <div
-          css={`
-            position: -webkit-sticky; /* Safari */
-            position: sticky;
-            width: 30%;
-            top: 0;
-            height: 100vh;
-          `}
-        >
-          <Img
-            css={`
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-            `}
-            fluid={
-              data.allMarkdownRemark.edges[id].node.frontmatter.image
-                .childImageSharp.fluid
-            }
-          />
-        </div>
-        <div
-          css={`
-            color: white;
-          `}
-        >
-          {items}
-        </div>
-      </div>
+      {data.allMarkdownRemark.edges.map(individualProject => (
+        <ProjectDetails data={individualProject} />
+      ))}
     </>
   )
 }
