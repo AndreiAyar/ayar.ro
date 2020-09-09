@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Header from "../components/Header.jsx"
 import "./layout.css"
 
-import Logo from "./Logo"
+import Logo from "../components/Logo.jsx"
 
-import GlobalStyle from "./GlobalStyle"
+import GlobalStyle from "../components/GlobalStyle.jsx"
 
 import styled, { css } from "styled-components"
 import ProjectsOverview from "./ProjectsOverview"
