@@ -287,17 +287,7 @@ const Header = ({ siteTitle, overflow, setOverflow }) => {
                 <span>{"<View/>"} </span> Overview
               </a>
             </li>
-            {/* <li>
-              <a
-                href="#cat-title"
-                onClick={() => {
-                  setOverflow(false)
-                  setShowMenu(false)
-                }}
-              >
-                <span>{"<View/>"} </span>Experience
-              </a>
-            </li> */}
+ 
             <li className="secondary-nav__li">
               <a onClick={() => setSubMenu(!subMenu ? true : false)} href="#">
                 <span>{"<View/>"} </span>Work
