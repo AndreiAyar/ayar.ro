@@ -10,12 +10,10 @@ const Container = styled.div`
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: max-content;
   grid-gap: 10px;
-
   -webkit-box-align: center;
   align-items: center;
   margin-bottom: 120px;
   .container_app__ios video {
-    margin: 0 auto;
     position: absolute;
     top: 12px;
     left: 1px;
@@ -71,7 +69,7 @@ const Container = styled.div`
         ${props =>
           props.alternate
             ? css`
-                grid-row: 1/2;
+                grid-row: 1;
                 grid-column: 1/7;
                 /* grid-row-start: 1;
             grid-column-start: 1;
@@ -79,7 +77,7 @@ const Container = styled.div`
             grid-column-end: 7; */
               `
             : css`
-                grid-row: 1/2;
+                grid-row: 1;
                 grid-column: 3/12;
                 /* grid-row-start: 1;
             grid-column-start: 5;
@@ -92,7 +90,7 @@ const Container = styled.div`
       css`
         grid-row: 1/2;
         justify-content: center;
-        grid-column: 1/-1;
+        grid-column: 1/7;
         /* grid-row-start: 1;
             grid-column-start: 1;
             grid-row-end: 2;
@@ -110,7 +108,7 @@ const Container = styled.div`
     color: rgb(181, 184, 191);
     background-color: #1c2541;
     text-align: center;
-    grid-column:1/-1;
+    grid-column: 1/-1;
     height: auto;
     position: relative;
     p {
@@ -177,7 +175,7 @@ const Container = styled.div`
   @media only screen and (max-width: 768px) {
     .project_description {
       grid-row: 4;
-      font-size:0.9rem;
+      font-size: 0.9rem;
       justify-self: center;
       grid-column: 1 / -1;
     }
@@ -294,13 +292,13 @@ const RenderProject = ({ view, data }) => {
                 view == "small"
                   ? css`
                       width: 350px;
-                      margin: 0 auto;
+                      /* margin: 0 auto; */
                       grid-row: 2/4;
                       position: relative;
                     `
                   : css`
                       width: 100%;
-                      margin: 0 auto;
+                      /* margin: 0 auto; */
                       grid-row: 2;
                       grid-column: 1/-1;
                       position: relative;
@@ -312,7 +310,7 @@ const RenderProject = ({ view, data }) => {
              view == "small"
                ? css`
                    width: 350px;
-                   margin: 0 auto;
+               
                    grid-row: 1/4;
                    position: relative;
                  `
@@ -336,8 +334,8 @@ const RenderProject = ({ view, data }) => {
               </video>
               <Img
                 css={`
+                  display: block;
                   object-fit: cover;
-                  margin: 0 auto;
                 `}
                 fluid={data.node.frontmatter.image.childImageSharp.fluid}
               />
