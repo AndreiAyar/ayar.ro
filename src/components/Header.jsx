@@ -259,7 +259,7 @@ const Header = ({ siteTitle, overflow, setOverflow }) => {
   }
   const handleClickOutside = event => {
     if (refWrapper && !refWrapper.current.contains(event.target)) {
-      // alert('You clicked outside of me!');
+    
       setShowMenu(false)
       setOverflow(false)
     }
