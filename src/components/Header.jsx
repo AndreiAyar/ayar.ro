@@ -375,18 +375,4 @@ export default Header
 //     }
 //   }
 // `
-// const Cacat = styled.div`
-// display:flex;
-// justify-content:space-between;
 
-// `
-// const Copii = styled.div`
-
-// `
-// // const stilizezheaderu = styled(Header)`
-
-// // `
-
-// //styled components composition
-
-// const paragrafe = css`color:red`;
